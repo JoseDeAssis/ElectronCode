@@ -1,0 +1,73 @@
+{
+  "name": "app",
+  "version": "0.1.0",
+  "description": "Electron timer app",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "cross-env": "^7.0.2",
+    "electron-is-dev": "^1.2.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "3.4.1",
+    "styled-components": "^5.1.1"
+  },
+  "scripts": {
+    "start": "rescripts start",
+    "build": "rescripts build",
+    "test": "rescripts test",
+    "eject": "react-scripts eject",
+    "dev": "concurrently \"cross-env BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
+    "postinstall": "electron-builder install-app-deps",
+    "preelectron-build": "yarn build",
+    "electron-build": "electron-builder -w"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@rescripts/cli": "^0.0.14",
+    "@rescripts/rescript-env": "^0.0.12",
+    "concurrently": "^5.2.0",
+    "electron": "^9.1.2",
+    "electron-builder": "^22.8.0",
+    "typescript": "^3.9.7",
+    "wait-on": "^5.1.0"
+  },
+  "author": {
+    "name": "José Maria",
+    "email": "jose.assis@aluno.uece.br",
+    "url": "https://seu-site.com"
+  },
+  "homepage": "./",
+  "main": "public/electron.js",
+  "build": {
+    "appId": "com.seu-site.seu-app",
+    "productName": "MyApp",
+    "copyright": "Copyright © 2019 José Maria",
+    "mac": {
+      "category": "public.app-category.utilities"
+    },
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    }
+  }
+}
